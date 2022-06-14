@@ -12,11 +12,17 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL & ~ E_NOTICE);
 
-require_once __DIR__ . "/Product.php";
+require_once __DIR__ . "/AnimalToy.php";
+require_once __DIR__ . "/AnimalFood.php";
 
-$food = new Product("conad", "miaomiao", 4, "crocchette per gatti");
-var_dump($food);
+$catfood = new AnimalFood("Conad", "Miaomiao", 4, "Crocchette per gatti", 100, "1 anno");
+var_dump($catfood);
 
+$dogfood = new AnimalFood("Royal Canin", "Gastrointestinal", 40, "Crocchette per cani", 1000, "4 anni");
+var_dump($dogfood);
+
+$plastic_bone = new AnimalToy("Joe's Zampetti", "Osso di plastica", "10", "Osso di plastica per cani", "2 anni");
+var_dump($plastic_bone);
 ?>
 
 <!DOCTYPE html>
@@ -30,7 +36,9 @@ var_dump($food);
 <body>
 
 <ul>
-    <li><?php echo $food->printInfo() ?></li>
+    <li><?php echo $catfood->printInfo() ?></li>
+    <li><?php echo $dogfood->printInfo() ?></li>
+    <li><?php echo $plastic_bone->printInfo() ?></li>
 </ul>
     
 </body>
