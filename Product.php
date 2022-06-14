@@ -5,6 +5,7 @@ class Product {
     public $name;
     public $price;
     public $description;
+    public $in_stock = true;
 
     function __construct($_brand, $_name, $_price, $_description) {
         $this->brand = $_brand;
@@ -17,3 +18,5 @@ class Product {
         return "$this->description $this->brand $this->name € $this->price";
     }
 }
+
+?>
